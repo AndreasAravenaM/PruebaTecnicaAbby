@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-VA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title> API Symbols </title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" 
+            rel="stylesheet" 
+            integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" 
+            crossorigin="anonymous">
+
+    </head>
+
+    <body>
+
+        <h1 class="text-center"> Symbols </h1>
+
+        <div class="container">
+
+            <table class="table table-bordered">
+
+                <thead class="table-dark">
+
+                    <tr>
+
+                        <th scope="col"> Symbol </th>
+                        <th scope="col"> Name </th>
+                        <th scope="col"> Price </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+                    
+                    <%  if (!find) {
+
+                        for(var i=0; i<list.length; i++){ %>
+
+                        <tr>
+
+                            <td><%= list[i].symbol %></td>
+                            <td><%= list[i].name %></td>
+                            <td><%= list[i].price %></td>
+
+                        </tr>
+
+                        <% }
+
+                    }
+
+                    else {
+
+                        for(var i=0; i<list.length; i++){ 
+
+                            if (find === list[i].symbol) { %>
+
+                                <tr>
+
+                                    <td><%= list[i].symbol %></td>
+                                    <td><%= list[i].name %></td>
+                                    <td><%= list[i].price %></td>
+
+                                </tr>
+
+                            <% break
+
+                            }
+                        
+                        }
+
+                    } %>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </body>
+
+</html>
